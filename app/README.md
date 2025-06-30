@@ -1,3 +1,13 @@
 # MCP Server Application
 
-This directory will host the source code for the MCP Server built with Spring Boot. The server will follow the guidelines from the MCP Server Boot Starter documentation.
+This directory contains the first version of the MCP Server for the Pix API.
+The implementation follows the Spring AI MCP Server Boot Starter guidelines and
+uses Spring MVC as transport provider.
+
+## Build and Run
+
+```bash
+./mvnw spring-boot:run
+```
+
+The server requires Java 21.

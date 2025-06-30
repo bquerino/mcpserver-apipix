@@ -4,7 +4,7 @@ Este projeto demonstra a implementação de um servidor MCP (Model Context Proto
 
 ## Como funciona
 
-O núcleo da aplicação está em `app/src/main`. A classe `McpServerApplication` inicializa o Spring Boot e registra as ferramentas disponíveis. Cada método público em `PixService` anotado com `@Tool` é exposto aos clientes via HTTP através do transport provider MVC. As chamadas ao Pix são delegadas para um endpoint externo configurado pela propriedade `pix.base-url` no `application.yml`.
+O núcleo da aplicação está em `app/src/main`. A classe `McpServerApplication` inicializa o Spring Boot e registra as ferramentas disponíveis. Cada método público em `PixService` anotado com `@Tool` é exposto aos clientes via HTTP através do transport provider MVC. As chamadas ao Pix são delegadas para um endpoint externo configurado pela propriedade `pix.base-url` (ou variável de ambiente `PIX_BASE_URL`) no `application.yml`.
 
 ## Arquitetura
 
@@ -31,6 +31,9 @@ Para rodar localmente é necessário ter Java 21 e Maven instalados. Execute os 
 mvn spring-boot:run
 ```
 
+O endereço do serviço Pix pode ser ajustado com a variável de ambiente
+`PIX_BASE_URL` (por padrão `https://pix.example.com`).
+
 É possível gerar o JAR e executá-lo manualmente:
 
 ```bash
@@ -44,5 +47,5 @@ O repositório inclui um `Dockerfile` multi-stage baseado na JRE Eclipse Temurin
 
 ```bash
 docker build -t mcpserver-apipix .
-docker run --rm -p 8080:8080 mcpserver-apipix
+docker run --rm -p 8080:8080 -e PIX_BASE_URL=https://pix.example.com mcpserver-apipix
 ```

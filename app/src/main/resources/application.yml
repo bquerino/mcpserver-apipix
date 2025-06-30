@@ -11,3 +11,6 @@ spring:
           resource: true
           prompt: true
           completion: true
+
+pix:
+  base-url: https://pix.example.com

@@ -134,7 +134,8 @@ public ToolCallbackProvider pixTools(PixService service) {
 ```
 
 Configure o `pix.base-url` e as credenciais de acesso (certificados e OAuth)
-de acordo com as especificações do Bacen.
+de acordo com as especificações do Bacen. Esse valor pode ser sobrescrito
+pela variável de ambiente `PIX_BASE_URL`.
 
 ## 6. Execução
 

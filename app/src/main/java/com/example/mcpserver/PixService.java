@@ -12,7 +12,7 @@ public class PixService {
     private final WebClient webClient;
 
     public PixService(WebClient.Builder builder,
-                      @Value("${pix.base-url:https://pix.example.com}") String baseUrl) {
+                      @Value("${pix.base-url}") String baseUrl) {
         this.webClient = builder.baseUrl(baseUrl).build();
     }
 

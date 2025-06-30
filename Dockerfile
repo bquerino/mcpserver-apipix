@@ -10,5 +10,6 @@ RUN mvn -B package -DskipTests
 FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 COPY --from=builder /build/app/target/mcpserver-apipix-0.0.1-SNAPSHOT.jar app.jar
+ENV PIX_BASE_URL=https://pix.example.com
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","/app/app.jar"]

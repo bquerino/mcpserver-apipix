@@ -1,16 +1,6 @@
+logging:
+  pattern:
+    console:
 spring:
-  ai:
-    mcp:
-      server:
-        name: webmvc-mcp-server
-        version: 1.0.0
-        type: SYNC
-        sse-message-endpoint: /mcp/messages
-        capabilities:
-          tool: true
-          resource: true
-          prompt: true
-          completion: true
-
-pix:
-  base-url: https://pix.example.com
+  main:
+    banner-mode: off
